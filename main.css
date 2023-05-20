@@ -1,0 +1,85 @@
+/*esse "*" está falando com tudo*/
+*{
+    margin: 0;
+    padding: 0;
+/*esqueci*/
+    box-sizing: border-box;
+}
+
+.gameboard{
+    width: 80%;
+    height: 500px;
+    border: 1px solid #333;
+    margin: 0 auto;
+    /*a posição de tudo vai ser relativo em comparação ao tamanho da tela*/
+    position: relative;
+    /*esqueci também*/
+    overflow: hidden;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.nuvem{
+    width: 500px;
+    /*esquecimo*/
+    position: absolute;
+    /*falando qual vai ser o nome da animação a duração e o quanto ela vai passar*/
+    animation: nuvem-animation 10s infinite linear;
+}
+
+.cano{
+   width: 80px;
+   position: absolute; 
+   bottom: 0px;
+   animation: cano-animation 1.5s infinite linear;
+} 
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.jump{
+    /*esqueci oq esse "ease-out" faz*/
+    animation: jump-animation 700ms ease-out;
+}
+
+/*pegando a animação "cano-animation" e falando q ela vai de um lugar para outro*/
+@keyframes cano-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%
+    }
+}
+
+/*aqui é a mesma coisa mas mais complicado e eu não entendi como funciona esse de "%"*/
+@keyframes jump-animation {
+    0% {
+        bottom: 0px;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes nuvem-animation {
+    from {
+      right: -500px;
+    }
+    to {
+      right: 100%;
+    }
+}
+
+.score{
+    color: red;
+}
